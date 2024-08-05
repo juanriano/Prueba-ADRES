@@ -10,7 +10,7 @@ Este proyecto es una aplicación web con una API backend para gestionar requisit
 
 ## Instalación
 
-1. Clona este repositorio: git clone [https://github.com/tu-usuario/sistema-adquisiciones-adres.git](https://github.com/tu-usuario/sistema-adquisiciones-adres.git)
+1. Clona este repositorio: git clone [https://github.com/juanriano/Prueba-ADRES.git](https://github.com/juanriano/Prueba-ADRES)
 2. Navega al directorio del proyecto: cd sistema-adquisiciones-adres
 3. Instala las dependencias: pip install -r requirements.txt
 
