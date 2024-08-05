@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Adquisiciones - ADRES</title>
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="icon" href="/static/img/logo.png" type="image/png+xml">
+</head>
+<body>
+    <header>
+        <img src="/static/img/logo.png" alt="Logo ADRES" class="logo">
+        <h1>Sistema de Gestión de Adquisiciones</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" id="nav-crear">Crear Adquisición</a></li>
+            <li><a href="#" id="nav-listar">Listar Adquisiciones</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="seccion-formulario" class="oculto">
+            <h2>Registro de Adquisición</h2>
+            <form id="formulario-adquisicion">
+                <div class="grupo-formulario">
+                    <label for="presupuesto">Presupuesto:</label>
+                    <input type="number" id="presupuesto" name="presupuesto" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="unidad">Unidad Administrativa:</label>
+                    <input type="text" id="unidad" name="unidad" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="tipo">Tipo de Bien o Servicio:</label>
+                    <input type="text" id="tipo" name="tipo" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" id="cantidad" name="cantidad" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="valor_unitario">Valor Unitario:</label>
+                    <input type="number" id="valor_unitario" name="valor_unitario" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="fecha-adquisicion">Fecha de Adquisición:</label>
+                    <input type="date" id="fecha-adquisicion" name="fecha_adquisicion" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="proveedor">Proveedor:</label>
+                    <input type="text" id="proveedor" name="proveedor" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="documentacion">Documentación:</label>
+                    <textarea id="documentacion" name="documentacion"></textarea>
+                </div>
+                <button type="submit">Registrar</button>
+            </form>
+        </section>
+        <section id="seccion-lista">
+            <h2>Lista de Adquisiciones</h2>
+            <div id="filtros">
+                <input type="text" id="busqueda" placeholder="Buscar...">
+                <select id="filtro-estado">
+                    <option value="todos">Todos</option>
+                    <option value="activos">Activos</option>
+                    <option value="inactivos">Inactivos</option>
+                </select>
+            </div>
+            <table id="tabla-adquisiciones">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Presupuesto</th>
+                        <th>Unidad</th>
+                        <th>Cantidad</th>
+                        <th>Valor Total</th>
+                        <th>Fecha</th>
+                        <th>Proveedor</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-adquisiciones"></tbody>
+            </table>
+        </section>
+    </main>
+    <div id="modal" class="modal">
+        <div class="contenido-modal">
+            <span class="cerrar">&times;</span>
+            <h2 id="titulo-modal"></h2>
+            <div id="cuerpo-modal"></div>
+        </div>
+    </div>
+    
+    <script src="/static/js/servicioAdquisicion.js"></script>
+    <script src="/static/js/servicioUI.js"></script>
+    <script src="/static/js/servicioValidacion.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
